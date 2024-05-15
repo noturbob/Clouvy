@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Binary to Grayscale Image Converter</title>
+<link rel="stylesheet" type="text/css" href="binary_to_grayscale.css">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  #outputCanvas {
+    max-width: 100%;
+    border: 1px solid black;
+  }
+</style>
+</head>
+<body>
+<h1>Binary to Grayscale Image Converter</h1>
+<p>Enter a binary code (0s and 1s) below:</p>
+<input type="text" id="binaryInput" placeholder="Enter binary code">
+<button onclick="convertToImage()">Convert</button>
+<canvas id="outputCanvas"></canvas>
+
+<script>
+function convertToImage() {
+  const binaryInput = document.getElementById('binaryInput').value;
+  const canvas = document.getElementById('outputCanvas');
+  const ctx = canvas.getContext('2d');
+  
+  // Calculate the dimensions of the canvas based on binary input length
+  const width = Math.ceil(Math.sqrt(binaryInput.length));
+  const height = Math.ceil(binaryInput.length / width);
+  canvas.width = width;
+  canvas.height = height;
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  for (let i = 0; i < binaryInput.length; i++) {
+    const pixelValue = binaryInput[i] === '1' ? 255 : 0;
+    const x = i % width;
+    const y = Math.floor(i / width);
+    ctx.fillStyle = `rgb(${pixelValue}, ${pixelValue}, ${pixelValue})`;
+    ctx.fillRect(x, y, 1, 1);
+  }
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clouvy</title>
+    <link rel="stylesheet" type="text/css" href="style1.css">
+    <script>
+        function convertToBinary() {
+            const fileInput = document.getElementById('fileInput');
+            const outputArea = document.getElementById('outputArea');
+
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(event) {
+                const binaryData = event.target.result;
+                const binaryString = binaryData.split('').map(char => char.charCodeAt(0).toString(2).padStart(8, '0')).join(' ');
+                outputArea.textContent = binaryString;
+            };
+
+            reader.readAsBinaryString(file);
+        }
+    </script>
+                
+</head>
+<body>
+    <h1>Clouvy</h1>
+    <input type="file" id="fileInput">
+    <button onclick="convertToBinary()">Convert</button>
+    <pre id="outputArea"></pre>
+    <a href="binary_to_grayscale.html" target="_blank" class="converter-button">Binary to Grayscale Image Converter</a></body>
+</html>

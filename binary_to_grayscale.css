@@ -1,0 +1,63 @@
+/* Reset some default styles */
+body, h1, p, input, button {
+    margin: 0;
+    padding: 0;
+}
+
+/* Overall container styling */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Light gray background color */
+}
+
+/* Header styling */
+h1 {
+    background-color: #007bff; /* Blue */
+    color: #fff; /* White */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Input and button container styling */
+.container {
+    background-color: #ffffff; /* White */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+/* Input styling */
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+/* Convert button styling */
+button {
+    background-color: #007bff; /* Blue */
+    color: #fff; /* White */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+/* Output canvas styling */
+#outputCanvas {
+    max-width: 100%;
+    border: 1px solid black;
+    margin-top: 20px;
+}
